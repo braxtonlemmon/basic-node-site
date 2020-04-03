@@ -13,7 +13,8 @@ http.createServer(function (req, res) {
       })
     } else {
       res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end(data);
+      res.write(data);
+      return res.end();
     }
   })
 }).listen(8080);
